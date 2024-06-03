@@ -27,7 +27,7 @@ import ToggleOnSubmit from './elements/toggle_on_submit'
 
 import * as TurboInstantClick from './lib/turbo_instant_click'
 
-import './images/preview.png'
+import './images/webeng.jpg'
 
 TurboInstantClick.start()
 

@@ -33,7 +33,7 @@ module PdfIcons
   end
 
   def logo_data
-    @logo_data ||= PATH.join('logo.png').read
+    @logo_data ||= PATH.join('Web.Eng-icon.png').read
   end
 
   def logo_new_data

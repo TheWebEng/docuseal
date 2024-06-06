@@ -328,13 +328,13 @@ module Submissions
     end
 
     def sign_reason
-      'Signed with DocuSeal.co'
+      'Signed with Web.Eng Sign'
     end
 
     def add_logo(column, _submission = nil)
       column.image(PdfIcons.logo_io, width: 40, height: 40, position: :float)
 
-      column.formatted_text([{ text: 'DocuSeal',
+      column.formatted_text([{ text: 'Web.Eng',
                                link: Docuseal::PRODUCT_URL }],
                             font_size: 20,
                             font: [FONT_NAME, { variant: :bold }],

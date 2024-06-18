@@ -17,8 +17,7 @@ class WebhookSettingsController < ApplicationController
   def update
     submitter = current_account.submitters.where.not(completed_at: nil).order(:id).last
 
-    SendFormCompletedWebhookRequestJob.perform_async({ 'submitter_id' => submitter.id,
-                                                       'encrypted_config_id' => @encrypted_config.id })
+    SendFormCompletedWebhookRequestJob.perform_async({ 'submitter_id' => submitter.id })
 
     redirect_back(fallback_location: settings_webhooks_path, notice: 'Webhook request has been sent.')
   end

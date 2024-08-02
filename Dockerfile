@@ -30,6 +30,9 @@ COPY ./tailwind.application.config.js ./tailwind.application.config.js
 COPY ./app/javascript ./app/javascript
 COPY ./app/views ./app/views
 
+# Add command to remove .DS_Store files
+RUN find /app -name '.DS_Store' -type f -delete
+
 RUN echo "gem 'shakapacker'" > Gemfile && ./bin/shakapacker
 
 FROM ruby:3.3.3-alpine as app

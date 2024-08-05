@@ -50,7 +50,7 @@ const en = {
   create_a_free_account: 'Create a Free Account',
   signed_with: 'Signed with',
   please_check_the_box_to_continue: 'Please check the box to continue',
-  open_source_documents_software: 'open source documents software',
+  open_source_documents_software: 'The most luxurious villas in the world',
   verified_phone_number: 'Verify Phone Number',
   use_international_format: 'Use international format: +1xxx',
   six_digits_code: '6-digit code',

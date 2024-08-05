@@ -30,6 +30,9 @@ COPY ./tailwind.application.config.js ./tailwind.application.config.js
 COPY ./app/javascript ./app/javascript
 COPY ./app/views ./app/views
 
+# Add command to remove .DS_Store files
+RUN find /app -name '.DS_Store' -type f -delete
+
 RUN echo "gem 'shakapacker'" > Gemfile && ./bin/shakapacker
 
 FROM ruby:3.3.3-alpine as app
@@ -41,7 +44,8 @@ ENV OPENSSL_CONF=/app/openssl_legacy.cnf
 
 WORKDIR /app
 
-RUN apk add --no-cache sqlite-dev libpq-dev mariadb-dev vips-dev vips-poppler poppler-utils redis vips-heif gcompat ttf-freefont && mkdir /fonts && rm /usr/share/fonts/freefont/FreeSans.otf
+RUN apk add --no-cache sqlite-dev libpq-dev mariadb-dev vips-dev vips-poppler poppler-utils redis vips-heif gcompat ttf-freefont && \
+    mkdir /fonts && rm /usr/share/fonts/freefont/FreeSans.otf
 
 RUN echo $'.include = /etc/ssl/openssl.cnf\n\
 \n\
